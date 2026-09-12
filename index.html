@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🗿 USELESS LIFE ADVICE | 100% Useless. 0% Life Improvement.</title>
+  <meta name="description" content="A humorous modern web app that gives completely useless, funny and random life advice in Malayalam. 100% Useless. 0% Life Improvement.">
+
+  <!-- Favicon Emoji -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🗿</text></svg>">
+
+  <!-- Google Fonts: Space Grotesk, Plus Jakarta Sans, Noto Sans Malayalam -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient floating glow blobs -->
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+  <div class="ambient-glow glow-3" aria-hidden="true"></div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Confetti / Emoji Particle Overlay -->
+  <div class="confetti-container" id="confettiContainer" aria-hidden="true"></div>
+
+  <!-- ==========================================
+       NAVIGATION BAR
+       ========================================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" aria-label="Useless Life Advice Home">
+        <span class="logo-emoji">🗿</span>
+        <span class="logo-text">
+          <span class="logo-line-1">USELESS LIFE</span>
+          <span class="logo-line-2">ADVICE APP</span>
+        </span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <div class="nav-links" id="navMenu">
+        <a href="#hero"      class="nav-link active" id="navHome">🏠 Home</a>
+        <a href="#today"     class="nav-link" id="navToday">📅 Today's Day</a>
+        <a href="#advice"    class="nav-link" id="navAdvice">🤡 Advice</a>
+        <a href="#favorites" class="nav-link nav-fav-link" id="navFav">
+          ❤️ Favorites
+          <span class="nav-badge" id="favBadge">0</span>
+        </a>
+        <a href="#stats"     class="nav-link" id="navStats">📊 Stats</a>
+        <a href="#about"     class="nav-link" id="navAbout">ℹ️ About</a>
+      </div>
+
+      <!-- Right: icon buttons + hamburger -->
+      <div class="nav-right">
+        <button class="nav-icon-btn" id="themeBtn" title="Toggle Theme" aria-label="Toggle theme">🌙</button>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Main Content Layout -->
+  <main class="page-container">
+
+    <!-- ==========================================
+         HERO SECTION
+         ========================================== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-grid">
+
+        <!-- Left: Hero Text -->
+        <div class="hero-content fade-in-up">
+
+          <!-- Warning Badge -->
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            ⚠️ THIS APP IS COMPLETELY USELESS
+          </div>
+
+          <!-- Main Title -->
+          <h1 class="hero-title">
+            USELESS <span class="word-life">LIFE</span><br>
+            <span class="word-advice">ADVICE</span>
+          </h1>
+
+          <!-- Tagline -->
+          <p class="hero-tagline">
+            100% Useless • 0% Life Improvement 😂
+          </p>
+
+          <!-- Subtitle -->
+          <p class="hero-subtitle">
+            "Advice you never asked for. 😂"
+          </p>
+
+          <!-- Malayalam Description -->
+          <p class="hero-malayalam-desc">
+            ജീവിതത്തിൽ നിങ്ങൾക്ക് ഒരിക്കലും ആവശ്യമില്ലാത്ത
+            <span class="highlight-pill">high-quality advice</span> ഇവിടെ ലഭിക്കും! 😂
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="hero-actions">
+            <a href="#advice" class="btn btn-primary" id="heroAdviceBtn">
+              <span>🎲 GIVE ME ADVICE</span>
+            </a>
+            <a href="#today" class="btn btn-secondary">
+              <span>📅 TODAY'S SPECIAL DAY</span>
+            </a>
+          </div>
+
+          <!-- Quick Stats Bar -->
+          <div class="hero-stats-quick">
+            <div class="quick-stat">
+              <span class="quick-num quick-num-yellow">247</span>
+              <span class="quick-label">Life Solutions</span>
+            </div>
+            <div class="quick-stat-divider"></div>
+            <div class="quick-stat">
+              <span class="quick-num quick-num-pink">100%</span>
+              <span class="quick-label">Time Wasted</span>
+            </div>
+            <div class="quick-stat-divider"></div>
+            <div class="quick-stat">
+              <span class="quick-num quick-num-cyan">404</span>
+              <span class="quick-label">Productivity Found</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Hero Mascot Illustration -->
+        <div class="hero-media fade-in-up" style="animation-delay:0.2s">
+          <div class="mascot-wrapper">
+            <div class="mascot-frame">
+              <img
+                src="images/hero-mascot.jpeg"
+                alt="Moai Mascot wearing neon sunglasses and sipping Indian tea"
+                class="mascot-img"
+                id="heroMascotImg"
+              >
+              <div class="mascot-overlay-badge badge-top-right">
+                <span>☕</span> Masala Chai Vibe
+              </div>
+              <div class="mascot-overlay-badge badge-bottom-left">
+                <span>🗿</span> 100% Sarcasm
+              </div>
+            </div>
+            <div class="mascot-halo" aria-hidden="true"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         CHOOSE A CATEGORY SECTION
+         ========================================== -->
+    <section class="section-container" id="categorySection">
+      <div class="section-header fade-in-up">
+        <div class="section-pill">🎨 FILTER ADVICE</div>
+        <h2 class="section-title">CHOOSE A <span class="gradient-text">CATEGORY</span></h2>
+        <p class="section-desc">Pick a category and get advice that's even more useless!</p>
+      </div>
+
+      <!-- Categories Pills -->
+      <div class="categories-bar fade-in-up" role="tablist" aria-label="Advice Categories">
+        <button class="category-pill active" data-category="all"          role="tab" aria-selected="true"><span>✨ All</span></button>
+        <button class="category-pill"        data-category="funny"        role="tab" aria-selected="false"><span>😂 Funny</span></button>
+        <button class="category-pill"        data-category="useless"      role="tab" aria-selected="false"><span>🗿 Useless</span></button>
+        <button class="category-pill"        data-category="tech"         role="tab" aria-selected="false"><span>💻 Tech</span></button>
+        <button class="category-pill"        data-category="student"      role="tab" aria-selected="false"><span>🎓 Student</span></button>
+        <button class="category-pill"        data-category="relationship" role="tab" aria-selected="false"><span>❤️ Relationship</span></button>
+        <button class="category-pill"        data-category="work"         role="tab" aria-selected="false"><span>💼 Work</span></button>
+        <button class="category-pill"        data-category="sleep"        role="tab" aria-selected="false"><span>😴 Sleep</span></button>
+        <button class="category-pill"        data-category="food"         role="tab" aria-selected="false"><span>🍕 Food</span></button>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         MAIN ADVICE GENERATOR SECTION
+         ========================================== -->
+    <section class="section-container" id="advice">
+      <div class="section-header fade-in-up">
+        <div class="section-pill">🤡 INSTANT WISDOM</div>
+        <h2 class="section-title">NEED SOME <span class="gradient-text">USELESS ADVICE?</span></h2>
+        <p class="section-desc">നിങ്ങളുടെ പ്രശ്നങ്ങൾക്ക് ഒരു പരിഹാരവും ഇവിടെ ലഭിക്കില്ലെന്ന് ഞങ്ങൾ വാക്ക് നൽകുന്നു!</p>
+      </div>
+
+      <!-- Advice Display Card -->
+      <div class="advice-card-center">
+        <div class="advice-card fade-in-up" id="adviceCard">
+
+          <!-- Card Header -->
+          <div class="advice-card-header">
+            <div class="advice-category-badge">
+              <span class="advice-avatar-emoji" id="adviceEmoji">🗿</span>
+              <span id="adviceCategoryTag">🗿 Useless</span>
+            </div>
+            <div class="useless-score-chip">
+              <span class="chip-label">USELESSNESS</span>
+              <span class="chip-val" id="meterScore">99.9%</span>
+            </div>
+          </div>
+
+          <!-- Progress Meter -->
+          <div class="useless-meter-wrap">
+            <div class="useless-meter-bar" id="meterFill" style="width: 99.9%;"></div>
+          </div>
+
+          <!-- Big Advice Quote -->
+          <div class="advice-quote-container">
+            <span class="quote-symbol open" aria-hidden="true">"</span>
+            <p class="big-advice-text" id="adviceQuote">
+              താഴെയുള്ള button അമർത്തൂ... നിങ്ങളുടെ ജീവിതം മാറ്റാൻ പോകുന്നില്ല. 😂
+            </p>
+            <span class="quote-symbol close" aria-hidden="true">"</span>
+          </div>
+
+          <!-- Sarcastic Punchline -->
+          <div class="advice-subtext-wrap">
+            <p class="advice-subtext" id="adviceSubtext">Advice you never asked for.</p>
+          </div>
+
+          <!-- Card Actions Toolbar -->
+          <div class="advice-card-footer">
+            <div class="action-buttons-group">
+              <button class="card-action-btn" id="favBtn" title="Save to Favorites" aria-label="Add to favorites">
+                <span class="btn-icon" id="favIcon">🤍</span>
+                <span>Favorite</span>
+              </button>
+              <button class="card-action-btn" id="copyBtn" title="Copy advice" aria-label="Copy advice">
+                <span class="btn-icon">📋</span>
+                <span>Copy</span>
+              </button>
+              <button class="card-action-btn" id="shareBtn" title="Share advice" aria-label="Share advice">
+                <span class="btn-icon">📤</span>
+                <span>Share</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Giant Primary CTA -->
+        <div class="giant-cta-wrapper">
+          <button class="giant-btn" id="giveAdviceBtn">
+            <span class="sparkle-icon">✨</span>
+            <span class="giant-btn-text">GIVE ME ADVICE 🤡</span>
+            <span class="dice-icon">🎲</span>
+          </button>
+          <p class="giant-sub-hint">Click the button to receive fresh, unfiltered Malayalam wisdom!</p>
+        </div>
+
+        <!-- Quick Reaction Strip -->
+        <div class="reaction-strip fade-in-up">
+          <span class="reaction-strip-label">Quick Reactions:</span>
+          <div class="reaction-chips-row">
+            <button class="reaction-chip" data-emoji="😂" title="Laugh">😂 <span>Lol</span></button>
+            <button class="reaction-chip" data-emoji="🗿" title="Chad">🗿 <span>Chad</span></button>
+            <button class="reaction-chip" data-emoji="🤯" title="Mindblown">🤯 <span>Shocked</span></button>
+            <button class="reaction-chip" data-emoji="🛏️" title="Sleep">🛏️ <span>Sleepy</span></button>
+            <button class="reaction-chip" data-emoji="💸" title="Broke">💸 <span>Broke</span></button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         TODAY'S USELESS DAY SECTION
+         ========================================== -->
+    <section class="section-container" id="today">
+      <div class="section-header fade-in-up">
+        <div class="section-pill">📅 DAILY CELEBRATION</div>
+        <h2 class="section-title">👑 USELESS ADVICE OF THE <span class="gradient-text">DAY</span></h2>
+        <p class="section-desc">ലോകത്തിലെ ഏറ്റവും വിചിത്രമായ ദിനങ്ങൾ ആഘോഷിക്കൂ!</p>
+      </div>
+
+      <!-- Split layout: Today card + Quote companion -->
+      <div class="today-split">
+
+        <!-- Main Today Card -->
+        <div class="today-card-wrapper">
+          <div class="today-card fade-in-up" id="todayCard">
+            <div class="today-card-inner">
+
+              <div class="today-badge-row">
+                <span class="today-category-tag">🎉 TODAY'S UNOFFICIAL HOLIDAY</span>
+                <span class="today-calendar-date">📅 TODAY</span>
+              </div>
+
+              <div class="today-main-body">
+                <div class="today-emoji-box">
+                  <span class="today-big-emoji" id="todayEmoji">🪑</span>
+                </div>
+
+                <div class="today-info-box">
+                  <h3 class="today-title" id="todayTitle">CHAIR DAY</h3>
+                  <h4 class="today-malayalam-name" id="todayMalayalam">കസേര ദിനം</h4>
+                  <p class="today-quote-text" id="todayText">
+                    "ഇന്ന് കസേരയിൽ ഇരിക്കുമ്പോൾ കസേരയ്ക്ക് ഒരു നന്ദി പറയൂ. നിങ്ങളെക്കാൾ കൂടുതൽ സമയം അത് നിങ്ങളെ താങ്ങുന്നുണ്ട്. 😂"
+                  </p>
+
+                  <div class="today-tip-box">
+                    <span class="tip-icon">💡</span>
+                    <span class="tip-label">TODAY'S MISSION:</span>
+                    <span class="tip-content" id="todayTip">കസേരയെ പതിയെ തടവി കൊടുക്കുക.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="today-card-actions">
+                <button class="btn btn-outline" id="changeDayBtn" title="Show another fake day">
+                  <span>🔄 Change Day</span>
+                </button>
+                <button class="btn btn-ghost" id="copyDayBtn" title="Copy day advice">
+                  <span>📋 Copy Day Advice</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Quote Companion Card -->
+        <div class="quote-companion-card fade-in-up" style="animation-delay:0.15s">
+          <div>
+            <span class="quote-top-badge">💬 WISDOM QUOTE</span>
+            <span class="quote-icon-big">"</span>
+            <p class="quote-main-text">
+              Useless advice today,<br>legendary stories tomorrow.
+            </p>
+            <p class="quote-author">— The Useless Sage, probably</p>
+          </div>
+
+          <div>
+            <div class="quote-deco-dots">
+              <span class="deco-dot deco-dot-1"></span>
+              <span class="deco-dot deco-dot-2"></span>
+              <span class="deco-dot deco-dot-3"></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         FAVORITES SECTION
+         ========================================== -->
+    <section class="section-container" id="favorites">
+      <div class="section-header fade-in-up">
+        <div class="section-pill">❤️ WISDOM ARCHIVE</div>
+        <h2 class="section-title">SAVED <span class="gradient-text">USELESS WISDOM</span></h2>
+        <p class="section-desc">നിങ്ങൾ സൂക്ഷിച്ചു വെച്ച വിലപ്പെട്ട സമയംകൊല്ലി ഉപദേശങ്ങൾ!</p>
+      </div>
+
+      <div class="favorites-wrapper">
+        <div class="fav-toolbar">
+          <span class="fav-count-text">
+            Saved items: <strong id="favCountHeading">0</strong>
+          </span>
+          <button class="btn btn-ghost-danger" id="clearFavsBtn" style="display: none;">
+            <span>🗑️ Clear All</span>
+          </button>
+        </div>
+
+        <!-- Dynamic Grid of Saved Cards -->
+        <div class="favorites-grid" id="favList"></div>
+
+        <!-- Empty Favorites State -->
+        <div class="empty-state" id="emptyFavState">
+          <div class="empty-img-frame">
+            <img
+              src="images/empty-favorites.jpg"
+              alt="Funny sleepy cartoon character doing nothing"
+              class="empty-img"
+            >
+          </div>
+          <h3 class="empty-title">❤️ No useless advice saved yet.</h3>
+          <p class="empty-desc">
+            Save some useless wisdom.<br>
+            Your future self will probably regret it. 😂
+          </p>
+          <a href="#advice" class="btn btn-outline">
+            <span>Find Some Wisdom 🤡</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         STATISTICS SECTION
+         ========================================== -->
+    <section class="section-container" id="stats">
+      <div class="section-header fade-in-up">
+        <div class="section-pill">📊 LIVE ANALYTICS</div>
+        <h2 class="section-title">USELESS <span class="gradient-text">STATISTICS</span></h2>
+        <p class="section-desc">ഞങ്ങളുടെ ആപ്പ് ഇതുവരെ ലോകത്തിന് ഉണ്ടാക്കിയ നഷ്ടങ്ങളുടെ കൃത്യമായ കണക്കുകൾ!</p>
+      </div>
+
+      <div class="stats-grid">
+
+        <div class="stat-card stat-card-yellow fade-in-up">
+          <div class="stat-icon-bubble stat-icon-yellow">🤡</div>
+          <div class="stat-number stat-num-yellow" id="statAdviceCount">0</div>
+          <div class="stat-title">Useless Advice Generated</div>
+          <p class="stat-sub">Tracked in your browser storage</p>
+        </div>
+
+        <div class="stat-card stat-card-pink fade-in-up" style="animation-delay:0.1s">
+          <div class="stat-icon-bubble stat-icon-pink">🤯</div>
+          <div class="stat-number stat-num-pink" id="statConfusedCount">1,420</div>
+          <div class="stat-title">😂 People Confused</div>
+          <p class="stat-sub">And actively questioning life</p>
+        </div>
+
+        <div class="stat-card stat-card-cyan fade-in-up" style="animation-delay:0.2s">
+          <div class="stat-icon-bubble stat-icon-cyan">🗿</div>
+          <div class="stat-number stat-num-cyan" id="statProductivity">0.00%</div>
+          <div class="stat-title">🗿 Productivity Destroyed</div>
+          <p class="stat-sub">Absolute zero guaranteed</p>
+        </div>
+
+        <div class="stat-card stat-card-purple fade-in-up" style="animation-delay:0.3s">
+          <div class="stat-icon-bubble stat-icon-purple">☕</div>
+          <div class="stat-number stat-num-purple" id="statTeaRecs">42</div>
+          <div class="stat-title">☕ Tea Recommendations</div>
+          <p class="stat-sub">Because Sulaimani fixes everything</p>
+        </div>
+
+        <div class="stat-card stat-card-green fade-in-up" style="animation-delay:0.4s">
+          <div class="stat-icon-bubble stat-icon-green">❤️</div>
+          <div class="stat-number stat-num-green" id="statFavoritesSaved">0</div>
+          <div class="stat-title">❤️ Wisdom Favorited</div>
+          <p class="stat-sub">Regrets in the making</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         ABOUT SECTION
+         ========================================== -->
+    <section class="section-container" id="about">
+      <div class="about-card fade-in-up">
+        <div class="about-content">
+          <div class="section-pill">ℹ️ MISSION STATEMENT</div>
+          <h2 class="about-title">Why does this app exist?</h2>
+
+          <div class="about-quote-box">
+            <p class="about-malayalam-lead">
+              "നിങ്ങളുടെ ജീവിതം improve ചെയ്യാൻ ഇന്റർനെറ്റിൽ ഒരുപാട് apps ഉണ്ട്.<br><br>
+              അതിനാൽ... ഒന്നും improve ചെയ്യാത്ത ഒരു app ഞങ്ങൾ ഉണ്ടാക്കി. 😂"
+            </p>
+          </div>
+
+          <p class="about-disclaimer">
+            Use responsibly. This advice may be completely useless.
+          </p>
+
+          <div class="about-perks-grid">
+            <div class="perk-item">
+              <span class="perk-emoji">🚫</span>
+              <h4>0% Guarantees</h4>
+              <p>ഒരു ഉപദേശവും നിങ്ങളുടെ ജീവിതത്തിൽ പരീക്ഷിച്ചു നോക്കരുത്.</p>
+            </div>
+            <div class="perk-item">
+              <span class="perk-emoji">⏱️</span>
+              <h4>100% Time Pass</h4>
+              <p>വെറുതെയിരുന്ന് മുഷിയുമ്പോൾ ആസ്വദിക്കാൻ പറ്റിയ ശുദ്ധമായ തമാശ.</p>
+            </div>
+            <div class="perk-item">
+              <span class="perk-emoji">🌴</span>
+              <h4>100% Pure Malayali</h4>
+              <p>നാടൻ തനിമയോടും ചിരിയോടും കൂടിയ കിടിലൻ advice collection.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-warning">
+        ⚠️ Warning: This app may make your life slightly more useless.
+      </div>
+      <div class="footer-credits">
+        Made with 😂 + 🗿
+      </div>
+      <div class="footer-sub">
+        © 2026 Useless Life Advice. All rights reserved to laziness.
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
